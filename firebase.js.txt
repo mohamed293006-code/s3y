@@ -1,0 +1,15 @@
+//// تهيئة Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyCtB7fPCBtQDGY2aOlhk06-B4W-Tkd5KYY",
+  authDomain: "sa3y-28c6b.firebaseapp.com",
+  projectId: "sa3y-28c6b",
+  storageBucket: "sa3y-28c6b.firebasestorage.app",
+  messagingSenderId: "870493237355",
+  appId: "1:870493237355:web:9b99ab27d25113ea0fc12e",
+  measurementId: "G-EXBM9CCWYP"
+};
+
+// بدء الاتصال بـ Firebase
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();

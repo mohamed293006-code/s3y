@@ -1,0 +1,59 @@
+const db = firebase.firestore();
+const user = firebase.auth().currentUser;
+
+// تسجيل الخروج
+document.getElementById('logoutBtn').addEventListener('click', () => {
+  firebase.auth().signOut().then(() => window.location.href = "login.html");
+});
+
+// إضافة خدمة جديدة
+document.getElementById('addService').addEventListener('click', () => {
+  const title = document.getElementById('title').value.trim();
+  const desc = document.getElementById('desc').value.trim();
+  const price = document.getElementById('price').value.trim();
+
+  if (!title || !desc || !price) return alert("يرجى إدخال كل الحقول");
+
+  const currentUser = firebase.auth().currentUser;
+  if (!currentUser) return alert("يجب تسجيل الدخول أولًا");
+
+  db.collection("services").add({
+    user: currentUser.email,
+    title,
+    desc,
+    price,
+    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  })
+  .then(() => {
+    alert("تم إضافة الخدمة بنجاح ✅");
+    loadServices();
+  })
+  .catch(err => alert("حدث خطأ: " + err.message));
+});
+
+// تحميل الخدمات الحالية
+function loadServices() {
+  const list = document.getElementById('myServices');
+  list.innerHTML = "";
+
+  firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+      db.collection("services").where("user", "==", user.email)
+      .get()
+      .then(snapshot => {
+        snapshot.forEach(doc => {
+          const s = doc.data();
+          list.innerHTML += `
+            <div class="service">
+              <h4>${s.title}</h4>
+              <p>${s.desc}</p>
+              <div>💰 السعر: ${s.price} جنيه</div>
+            </div>
+          `;
+        });
+      });
+    }
+  });
+}
+
+window.onload = loadServices;

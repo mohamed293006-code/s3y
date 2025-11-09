@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>لوحة التحكم | سعي</title>
+  <link href="style.css" rel="stylesheet">
+  <style>
+    .dashboard { max-width: 800px; margin: 40px auto; background: #0b1220; padding: 20px; border-radius: 12px; }
+    .service { border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:15px; margin:10px 0; }
+    .service h4 { margin: 0 0 5px 0; color:#f6c700 }
+    .logout { background:#ef4444; color:white; border:none; padding:8px 14px; border-radius:10px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <h2>مرحبًا بك في سعي 👋</h2>
+    <button class="logout" id="logoutBtn">تسجيل الخروج</button>
+
+    <h3 style="margin-top:20px;">أضف خدمة جديدة</h3>
+    <input type="text" id="title" placeholder="عنوان الخدمة">
+    <textarea id="desc" placeholder="وصف الخدمة"></textarea>
+    <input type="number" id="price" placeholder="السعر بالجنيه">
+    <button id="addService" class="btn-primary">إضافة الخدمة</button>
+
+    <h3 style="margin-top:30px;">خدماتك الحالية</h3>
+    <div id="myServices"></div>
+  </div>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="firebase.js"></script>
+  <script src="service.js"></script>
+</body>
+</html>

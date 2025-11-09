@@ -1,0 +1,11 @@
+document.addEventListener('DOMContentLoaded', () => {
+  console.log("مرحبًا بك في موقع سعي 👋");
+});
+const firebaseConfig = {
+  apiKey: "AIzaSyD5JxX8....",
+  authDomain: "saay-network.firebaseapp.com",
+  projectId: "saay-network",
+  storageBucket: "saay-network.appspot.com",
+  messagingSenderId: "830277...",
+  appId: "1:830277:web:abc123",
+};

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سعي | Sa3y</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>سعي</h1>
+    <p>منصتك للعمل الحر – اكتشف، أنجز، وابدأ الآن</p>
+  </header>
+
+  <section id="services">
+    <h2>أقسام الخدمات</h2>
+    <div class="cards">
+      <div class="card">كتابة وترجمة</div>
+      <div class="card">تصميم جرافيك</div>
+      <div class="card">تسويق رقمي</div>
+      <div class="card">صوتيات وڤيديو</div>
+      <div class="card">برمجة وتطوير</div>
+      <div class="card">دروب شيبنج</div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="https://wa.me/message/PUILD7SURBLYC1" class="whatsapp">تواصل معنا على واتساب</a>
+    <p>© 2025 سعي | كل الحقوق محفوظة</p>
+  </footer>
+
+  <script src="script.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+<script src="fire0.js"></script>
+const firebaseConfig = {
+  apiKey: "AIzaSyD5JxX8....",
+  authDomain: "saay-network.firebaseapp.com",
+  projectId: "saay-network",
+  storageBucket: "saay-network.appspot.com",
+  messagingSenderId: "830277...",
+  appId: "1:830277:web:abc123",
+};
+
+</body>
+</html>
